@@ -33,7 +33,7 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        // Creating 3 student instances
+
         Student student1 = new Student("Maria", "Melisa", "Roble", "01/06/1984");
         Student student2 = new Student("Omar", "Takeshi", "Perez", "02/02/1994");
         Student student3 = new Student("Jürgen", "Aaron", "Morales", "03/03/1992");
