@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Formulario de Información</title>
+</head>
+<body>
+    <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName"><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="oldTitle">Old Title:</label>
+        <input type="text" id="oldTitle" name="oldTitle"><br><br>
+
+        <label>Highest Level of Education:</label><br>
+        <input type="radio" id="highSchool" name="education" value="High School">
+        <label for="highSchool">High School</label><br>
+        <input type="radio" id="college" name="education" value="College">
+        <label for="college">College</label><br>
+        <input type="radio" id="gradSchool" name="education" value="Grad School">
+        <label for="gradSchool">Grad School</label><br><br>
+
+        <label>Sex:</label><br>
+        <input type="checkbox" id="female" name="sex" value="Female" onclick="handleCheckboxClick(this)">
+        <label for="female">Female</label><br>
+        <input type="checkbox" id="male" name="sex" value="Male" onclick="handleCheckboxClick(this)">
+        <label for="male">Male</label><br>
+        <input type="checkbox" id="preferNotSay" name="sex" value="Prefer not to say" onclick="handleCheckboxClick(this)">
+        <label for="preferNotSay">Prefer not to say</label><br><br>
+
+        <label for="experience">Years of Experience:</label>
+        <select id="experience" name="experience">
+            <option value="1 Year">1 Year</option>
+            <option value="2 Year">2 Year</option>
+            <option value="3 Year">3 Year</option>
+            <option value="4 Year">4 Year</option>
+            <option value="5 Year">5 Year</option>
+        </select><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function handleCheckboxClick(clickedCheckbox) {
+            const checkboxes = document.querySelectorAll('input[name="sex"]');
+            checkboxes.forEach(checkbox => {
+                if (checkbox !== clickedCheckbox) {
+                    checkbox.checked = false;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
