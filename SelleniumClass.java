@@ -1,6 +1,7 @@
 package Selleniump;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,9 +19,7 @@ public class SelleniumClass {
 		driver.get("https://formy-project.herokuapp.com/form");
 		Thread.sleep(500);
 		
-		WebElement firstName = driver.findElement(By.id("first-name"));
-		firstName.click();
-		firstName.sendKeys("Jürgen Aaron");
+		driver.findElement(By.id("first-name")).sendKeys("Jürgen Aaron");
 		Thread.sleep(500);
 		
 		WebElement lastName = driver.findElement(By.id("last-name"));
@@ -68,9 +67,11 @@ public class SelleniumClass {
 		submit.click();
 		Thread.sleep(2500);
 		
-		driver.quit();
-		
-	 
-}
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("alert('Tarea de Selenium completada');");
+        Thread.sleep(3000); 
 
-}
+        driver.switchTo().alert().accept();
+        Thread.sleep(500); 
+
+        driver.quit();
